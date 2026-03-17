@@ -14,10 +14,11 @@ struct EditSheet: View {
     
     
     var body: some View {
-        VStack(spacing: 40) {
+        VStack(spacing: 20) {
                 // TODO: Add list.bullet.circle.fill icon and TextField
             Text("List Info")
                 .font(.system(size: 30, weight:.bold, design: .rounded))
+                .padding(16)
             
             VStack{
                 Image(systemName:"list.bullet.circle.fill")
@@ -25,7 +26,6 @@ struct EditSheet: View {
                     .frame(width:50,height:50)
                 TextField("List Name", text: $title)
                     .textFieldStyle(.roundedBorder)
-                   //.background(Color(red: 159/255, green: 169/255, blue: 163/255))
                     .frame(width:300, height:100)
             }
             .background(RoundedRectangle(cornerRadius:16)
@@ -33,6 +33,7 @@ struct EditSheet: View {
                 .frame(width:340,height:200))
 
             ColorChooser(selectedColor: $selectedColor)
+                .frame(width:340,height:200)
             
             Spacer()
         }
